@@ -9,10 +9,21 @@
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:id="@+id/editText"
+        android:hint="@string/amount_text" />
+
     <Button
         android:id="@+id/btn01"
-        android:text="Activity 2"
+        android:text="@string/moneda_boton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="right" />
+
 
 </LinearLayout>
