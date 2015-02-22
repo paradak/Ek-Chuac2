@@ -65,8 +65,8 @@ public class Activity2 extends ActionBarActivity {
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Informacion de la actividad")
-                .setCancelable(false)
+                .setMessage("Información de la actividad 2")
+                .setCancelable(true)
                 .setNegativeButton("Ok",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, just close

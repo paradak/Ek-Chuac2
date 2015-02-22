@@ -76,7 +76,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Informacion de la actividad")
+                .setMessage("Informacion de la actividad principal")
                 .setCancelable(false)
                 .setNegativeButton("Ok",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
