@@ -11,5 +11,6 @@
     <string name="moneda_boton">Currency</string>
     <string name="action_refresh">Refresh</string>
     <string name="action_fav">Favorites</string>
+    <string name="add_fav">Add to Favorites</string>
 
 </resources>

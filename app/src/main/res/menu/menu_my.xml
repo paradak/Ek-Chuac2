@@ -13,9 +13,13 @@
         android:orderInCategory="100" app:showAsAction="ifRoom"
         android:icon="@drawable/ic_action_refresh"/>
 
-    <item android:icon="@drawable/ic_action_important"
+    <item
         android:id="@+id/action_important" android:title="@string/action_fav"
         android:orderInCategory="100" app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_addimportant" android:title="@string/add_fav"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_important"/>
 
 
 
