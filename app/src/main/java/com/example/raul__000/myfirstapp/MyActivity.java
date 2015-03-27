@@ -10,12 +10,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MyActivity extends ActionBarActivity implements View.OnClickListener{
 
     final Context context = this;
     private Button btn1;
+    private Button btn1exchange;
+    private Button btn2;
+    private TextView respuesta;
+    private EditText nombre;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,38 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                 startActivity(i);
             }
         });
+
+        btn2 = (Button)findViewById(R.id.btn02);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        btn1exchange = (Button)findViewById(R.id.btnexchange);
+        btn1exchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             nombre= (EditText) findViewById(R.id.editText);
+             respuesta = (TextView) findViewById(R.id.hola);
+             int myNum = 0;
+
+             try {
+                  myNum = Integer.parseInt(nombre.getText().toString());
+
+                  int operacion = myNum*5;
+                  String resultado = Integer.toString(operacion);
+                  respuesta.setText(resultado);
+                 }
+             catch(NumberFormatException nfe)
+                 {
+                  System.out.println("Could not parse " + nfe);
+                 }
+            }
+        });
+
     }
 
 
