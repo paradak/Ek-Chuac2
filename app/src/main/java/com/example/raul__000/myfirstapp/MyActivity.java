@@ -44,8 +44,46 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
 
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(final AdapterView<?> parent, View view, final int position, long id) {
                 Toast.makeText(parent.getContext(),"Has Seleccionado"+ parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+
+               final String eleccion= parent.getItemAtPosition(position).toString();
+
+                btn1exchange = (Button)findViewById(R.id.btnexchange);
+                btn1exchange.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        nombre= (EditText) findViewById(R.id.editText);
+                        respuesta = (TextView) findViewById(R.id.hola);
+                        int valor=0;
+                        if (eleccion.equals("Euro")){
+                            valor = 5;
+                        }
+                        if (eleccion.equals("Dolar")){
+                            valor = 6;
+                        }
+                        if (eleccion.equals("Yen")){
+                            valor = 7;
+                        }
+                        if (eleccion.equals("Libra esterlina")){
+                            valor = 8;
+                        }
+                        int myNum = 0;
+
+                        try {
+                            myNum = Integer.parseInt(nombre.getText().toString());
+
+                            int operacion = myNum*valor;
+                            String resultado = Integer.toString(operacion);
+                            respuesta.setText(resultado);
+                        }
+                        catch(NumberFormatException nfe)
+                        {
+                            System.out.println("Could not parse " + nfe);
+                        }
+                    }
+                });
             }
 
             @Override
@@ -69,29 +107,6 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
             @Override
             public void onClick(View v) {
 
-            }
-        });
-
-
-        btn1exchange = (Button)findViewById(R.id.btnexchange);
-        btn1exchange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-             nombre= (EditText) findViewById(R.id.editText);
-             respuesta = (TextView) findViewById(R.id.hola);
-             int myNum = 0;
-
-             try {
-                  myNum = Integer.parseInt(nombre.getText().toString());
-
-                  int operacion = myNum*5;
-                  String resultado = Integer.toString(operacion);
-                  respuesta.setText(resultado);
-                 }
-             catch(NumberFormatException nfe)
-                 {
-                  System.out.println("Could not parse " + nfe);
-                 }
             }
         });
 
