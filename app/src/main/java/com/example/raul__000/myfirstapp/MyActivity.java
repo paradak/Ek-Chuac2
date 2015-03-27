@@ -9,9 +9,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MyActivity extends ActionBarActivity implements View.OnClickListener{
@@ -29,7 +33,28 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        ////////////
 
+        Spinner sp = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this, R.array.versiones, android.R.layout.simple_spinner_item);
+        sp.setAdapter(adapter);
+
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(parent.getContext(),"Has Seleccionado"+ parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        /////////////
         btn1 = (Button)findViewById(R.id.btn01);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override

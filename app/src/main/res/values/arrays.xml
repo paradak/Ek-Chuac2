@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+           <string-array name="versiones">
+              <item>Euro</item>
+               <item>Dolar</item>
+               <item>Yen</item>
+               <item>Libra esterlina</item>
+               <item>Florines</item>
+           </string-array>
+
+</resources>
