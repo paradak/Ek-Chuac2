@@ -48,8 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:id="@+id/editText"
-        android:hint="@string/amount_text" />
+        android:id="@+id/editText"/>
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -74,10 +73,16 @@
 
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Cantidad Convertida"/>
+
+    <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:attr/textAppearanceSmall"
-    android:text="Small Text"
+    android:text=""
     android:id="@+id/T4" />
 
     <Button

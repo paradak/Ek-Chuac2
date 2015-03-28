@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
            <string-array name="versiones">
-              <item>Euro</item>
-               <item>Dolar</item>
+               <item>Euro</item>
+               <item>Dolar Estadounidense</item>
                <item>Yen</item>
-               <item>Libra esterlina</item>
-               <item>Florines</item>
+               <item>Libra Esterlina</item>
+               <item>Peso</item>
+               <item>Yuan</item>
+               <item>Franco Suizo</item>
+               <item>Dolar Canadiense</item>
+               <item>Dolar Australiano</item>
            </string-array>
 
 </resources>
