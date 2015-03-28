@@ -28,12 +28,15 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     private TextView respuesta2;
     private EditText nombre;
     int opcion=0;
+    String eleccion;
+    String eleccion2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
         ////////////
         Spinner sp = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
@@ -46,9 +49,9 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
             public void onItemSelected(final AdapterView<?> parent, View view, final int position, long id) {
                 Toast.makeText(parent.getContext(),"Has Seleccionado"+ parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
 
-                String eleccion= parent.getItemAtPosition(position).toString();
+                setEleccion( parent.getItemAtPosition(position).toString());
 
-                switch(eleccion) {
+                switch(getEleccion()) {
                     case "Euro":setOpcion(1);break;
                     case "Dolar Estadounidense":setOpcion(2);break;
                     case "Yen":setOpcion(3);break;
@@ -81,7 +84,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
             public void onItemSelected(final AdapterView<?> parent, View view, final int position, long id) {
                 Toast.makeText(parent.getContext(), "Has Seleccionado" + parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
 
-                final String eleccion2= parent.getItemAtPosition(position).toString();
+                setEleccion2(parent.getItemAtPosition(position).toString());
 
                 btn1exchange = (Button)findViewById(R.id.btnexchange);
                 btn1exchange.setOnClickListener(new View.OnClickListener() {
@@ -94,263 +97,263 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                         switch(getOpcion()){
                             //Euro
                             case 1:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                          valor = 1;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                          valor = 1.08905;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 129.741482;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.732159064;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 16.594289;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 6.76285753;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 1.04792119;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 1.37367385;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 1.40499013;
                                     }break;
                             //Dolar Estadounidense
                             case 2:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.918231486;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 119.128;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.672291506;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 15.2373987;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 6.20986872;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 0.962234231;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 1.26135058;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 1.29010618;
                                     }break;
                             //Yen
                             case 3:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.00770763509;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.008394;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.0056432149;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 0.127902724;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 0.0521256381;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 0.0080767;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 0.0105877768;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 0.0108291512;
                                     }break;
                             //Libra Esterlina
                             case 4:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 1.36582342;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 1.48745;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 177.203955;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 22.6648687;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 9.23686923;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 1.43127531;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 1.87619592;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 1.91896843;
                                     }break;
                             //Peso
                             case 5:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.060261696;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.065628;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 7.81844174;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.0441211469;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 0.407541265;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 0.0631495081;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 0.0827799158;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 0.0846670881;
                                     }break;
                             //Yuan
                             case 6:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.147866489;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.161034;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 19.1844174;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.10826179;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 2.45373926;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 0.154952427;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 0.203120329;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 0.207750958;
                                     }break;
                             //Franco Suizo
                             case 7:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.954270236;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 1.039248;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 123.808435;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.698677603;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 15.8354361;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 6.45359365;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 1.31085607;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 1.34074026;
                                     }break;
                             //Dolar Canadiense
                             case 8:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.72797484;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.792801;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 94.4485347;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.532993378;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 12.0802249;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 4.92319013;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 0.76286026;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 1;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 1.02279747;
                                     }break;
                             //Dolar Australiano
                             case 9:
-                                    if (eleccion2.equals("Euro")){
+                                    if (getEleccion2().equals("Euro")){
                                         valor = 0.711748772;
                                     }
-                                    if (eleccion2.equals("Dolar Estadounidense")){
+                                    if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.77513;
                                     }
-                                    if (eleccion2.equals("Yen")){
+                                    if (getEleccion2().equals("Yen")){
                                         valor = 92.3433405;
                                     }
-                                    if (eleccion2.equals("Libra Esterlina")){
+                                    if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.745856619;
                                     }
-                                    if (eleccion2.equals("Peso")) {
+                                    if (getEleccion2().equals("Peso")) {
                                         valor = 11.8109648;
                                     }
-                                    if (eleccion2.equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan")){
                                         valor = 4.81345554;
                                     }
-                                    if (eleccion2.equals("Franco Suizo")){
+                                    if (getEleccion2().equals("Franco Suizo")){
                                         valor = 0.745856619;
                                     }
-                                    if (eleccion2.equals("Dolar Canadiense")) {
+                                    if (getEleccion2().equals("Dolar Canadiense")) {
                                         valor = 0.977710674 ;
                                     }
-                                    if (eleccion2.equals("Dolar Australiano")) {
+                                    if (getEleccion2().equals("Dolar Australiano")) {
                                         valor = 1;
                                     }break;
 
@@ -392,8 +395,20 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
             }
         });
 
+
+
+
+
+
+
+
+
+
+
         btn2 = (Button)findViewById(R.id.btn02);
         btn2.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
 
@@ -409,6 +424,26 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     public int getOpcion (){
        return opcion;
     }
+
+
+    public void setEleccion(String x){
+        eleccion=x;
+    }
+
+    public String getEleccion (){
+        return eleccion;
+    }
+
+    public void setEleccion2 (String x){
+        eleccion2=x;
+    }
+
+    public String getEleccion2 (){
+        return eleccion2;
+    }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

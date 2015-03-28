@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.raul__000.myfirstapp.Activity2">
 
-    <TextView android:text="lista de 9 divisas a elegir " android:layout_width="wrap_content"
+    <TextView android:text="Historial " android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 

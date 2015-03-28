@@ -57,15 +57,14 @@ public class Activity2 extends ActionBarActivity {
 
     void showAlert(){
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                context);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
         // set title
         alertDialogBuilder.setTitle("About");
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Información de la actividad 2")
+                .setMessage("Aqui se encuentra el historia de busquedas")
                 .setCancelable(true)
                 .setNegativeButton("Ok",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
