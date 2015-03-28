@@ -3,10 +3,10 @@
            <string-array name="versiones">
                <item>Euro</item>
                <item>Dolar Estadounidense</item>
-               <item>Yen</item>
+               <item>Yen Japones</item>
                <item>Libra Esterlina</item>
-               <item>Peso</item>
-               <item>Yuan</item>
+               <item>Peso Mexicano</item>
+               <item>Yuan Chino</item>
                <item>Franco Suizo</item>
                <item>Dolar Canadiense</item>
                <item>Dolar Australiano</item>

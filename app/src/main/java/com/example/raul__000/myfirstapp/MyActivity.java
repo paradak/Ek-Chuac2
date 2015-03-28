@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Currency;
+
 
 public class MyActivity extends ActionBarActivity implements View.OnClickListener{
 
@@ -54,10 +56,10 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                 switch(getEleccion()) {
                     case "Euro":setOpcion(1);break;
                     case "Dolar Estadounidense":setOpcion(2);break;
-                    case "Yen":setOpcion(3);break;
+                    case "Yen Japones":setOpcion(3);break;
                     case "Libra Esterlina":setOpcion(4);break;
-                    case "Peso":setOpcion(5);break;
-                    case "Yuan":setOpcion(6);break;
+                    case "Peso Mexicano":setOpcion(5);break;
+                    case "Yuan Chino":setOpcion(6);break;
                     case "Franco Suizo":setOpcion(7);break;
                     case "Dolar Canadiense":setOpcion(8);break;
                     case "Dolar Australiano":setOpcion(9);break;
@@ -103,16 +105,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                          valor = 1.08905;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 129.741482;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.732159064;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 16.594289;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 6.76285753;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -132,16 +134,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 1;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 119.128;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.672291506;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 15.2373987;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 6.20986872;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -161,16 +163,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.008394;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 1;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.0056432149;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 0.127902724;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 0.0521256381;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -190,16 +192,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 1.48745;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 177.203955;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 1;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 22.6648687;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 9.23686923;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -219,16 +221,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.065628;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 7.81844174;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.0441211469;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 1;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 0.407541265;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -248,16 +250,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.161034;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 19.1844174;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.10826179;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 2.45373926;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 1;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -277,16 +279,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 1.039248;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 123.808435;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.698677603;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 15.8354361;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 6.45359365;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -306,16 +308,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.792801;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 94.4485347;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.532993378;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 12.0802249;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 4.92319013;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -335,16 +337,16 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                         valor = 0.77513;
                                     }
-                                    if (getEleccion2().equals("Yen")){
+                                    if (getEleccion2().equals("Yen Japones")){
                                         valor = 92.3433405;
                                     }
                                     if (getEleccion2().equals("Libra Esterlina")){
                                         valor = 0.745856619;
                                     }
-                                    if (getEleccion2().equals("Peso")) {
+                                    if (getEleccion2().equals("Peso Mexicano")) {
                                         valor = 11.8109648;
                                     }
-                                    if (getEleccion2().equals("Yuan")){
+                                    if (getEleccion2().equals("Yuan Chino")){
                                         valor = 4.81345554;
                                     }
                                     if (getEleccion2().equals("Franco Suizo")){
@@ -385,7 +387,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
             }
         });
-
+/*
         btn1 = (Button)findViewById(R.id.btn01);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -394,16 +396,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                 startActivity(i);
             }
         });
-
-
-
-
-
-
-
-
-
-
+*/
 
         btn2 = (Button)findViewById(R.id.btn02);
         btn2.setOnClickListener(new View.OnClickListener() {
@@ -473,9 +466,21 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
             case R.id.action_settings:
                 return true;
+
+            case R.id.history:
+                historial();
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void historial(){
+
+        Intent i = new Intent(MyActivity.this, Activity2.class);
+        startActivity(i);
+
     }
 
     void showAlert(){
@@ -503,6 +508,11 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
         // show it
         alertDialog.show();
+
+    }
+    public void convertidor(){
+        Currency c  = Currency.getInstance("EUR");
+        c.getSymbol();  //obtiene solo el simbolo
 
     }
 

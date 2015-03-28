@@ -21,6 +21,9 @@
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_action_important"/>
 
+    <item android:id="@+id/history" android:title="Historial"
+        android:orderInCategory="100" app:showAsAction="never"/>
+
 
 
 </menu>
