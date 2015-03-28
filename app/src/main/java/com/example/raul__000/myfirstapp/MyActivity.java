@@ -25,8 +25,9 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     private Button btn1exchange;
     private Button btn2;
     private TextView respuesta;
+    private TextView respuesta2;
     private EditText nombre;
-
+    int opcion=0;
 
 
     @Override
@@ -34,7 +35,6 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         ////////////
-
         Spinner sp = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this, R.array.versiones, android.R.layout.simple_spinner_item);
@@ -42,48 +42,19 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
-
             @Override
             public void onItemSelected(final AdapterView<?> parent, View view, final int position, long id) {
                 Toast.makeText(parent.getContext(),"Has Seleccionado"+ parent.getItemAtPosition(position).toString(),Toast.LENGTH_LONG).show();
 
-               final String eleccion= parent.getItemAtPosition(position).toString();
+                String eleccion= parent.getItemAtPosition(position).toString();
 
-                btn1exchange = (Button)findViewById(R.id.btnexchange);
-                btn1exchange.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View v) {
-                        nombre= (EditText) findViewById(R.id.editText);
-                        respuesta = (TextView) findViewById(R.id.hola);
-                        int valor=0;
-                        if (eleccion.equals("Euro")){
-                            valor = 5;
-                        }
-                        if (eleccion.equals("Dolar")){
-                            valor = 6;
-                        }
-                        if (eleccion.equals("Yen")){
-                            valor = 7;
-                        }
-                        if (eleccion.equals("Libra esterlina")){
-                            valor = 8;
-                        }
-                        int myNum = 0;
-
-                        try {
-                            myNum = Integer.parseInt(nombre.getText().toString());
-
-                            int operacion = myNum*valor;
-                            String resultado = Integer.toString(operacion);
-                            respuesta.setText(resultado);
-                        }
-                        catch(NumberFormatException nfe)
-                        {
-                            System.out.println("Could not parse " + nfe);
-                        }
-                    }
-                });
+                switch(eleccion) {
+                    case "Euro":setOpcion(1);break;
+                    case "Dolar":setOpcion(2);break;
+                    case "Yen":setOpcion(3);break;
+                    case "Libra esterlina":setOpcion(4);break;
+                    case "Florines":setOpcion(5);break;
+                }
             }
 
             @Override
@@ -93,6 +64,86 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
         });
 
         /////////////
+
+        Spinner sp2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(
+                this, R.array.versiones, android.R.layout.simple_spinner_item);
+        sp2.setAdapter(adapter2);
+
+        sp2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+            @Override
+            public void onItemSelected(final AdapterView<?> parent, View view, final int position, long id) {
+                Toast.makeText(parent.getContext(), "Has Seleccionado" + parent.getItemAtPosition(position).toString(), Toast.LENGTH_LONG).show();
+
+                final String eleccion2= parent.getItemAtPosition(position).toString();
+
+                btn1exchange = (Button)findViewById(R.id.btnexchange);
+                btn1exchange.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        nombre = (EditText) findViewById(R.id.editText);
+                        respuesta2 = (TextView) findViewById(R.id.T4);
+                        double valor = 0;
+
+                        /*
+                        case "Euro":setOpcion(1);break;
+                        case "Dolar":setOpcion(2);break;
+                        case "Yen":setOpcion(3);break;
+                        case "Libra esterlina":setOpcion(4);break;
+                        case "Florines":setOpcion(5);break;
+                        */
+
+
+                        switch(getOpcion()){
+                            //Euro
+                            case 1: if (eleccion2.equals("Euro")){
+                                         valor = 1;
+                                    }
+                                    if (eleccion2.equals("Dolar")){
+                                         valor = 1.08905;
+                                    }
+                                    if (eleccion2.equals("Yen")){
+                                        valor = 129.741482;
+                                    }
+                                    if (eleccion2.equals("Libra esterlina")){
+                                        valor = 0.73220;
+                                    }
+                                    if (eleccion2.equals("Florines")) {
+                                        valor = 300.540;
+                                    }
+
+                        }
+
+
+
+                        int myNum = 0;
+
+                        try {
+                            myNum = Integer.parseInt(nombre.getText().toString());
+
+                            double operacion = myNum*valor;
+                            String resultado = Double.toString(operacion);
+                            respuesta2.setText(resultado);
+                        }
+                        catch(NumberFormatException nfe)
+                        {
+                            System.out.println("Could not parse " + nfe);
+                        }
+                    }
+                });
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         btn1 = (Button)findViewById(R.id.btn01);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +163,13 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
 
     }
 
+    public void setOpcion (int x){
+        opcion=x;
+    }
+
+    public int getOpcion (){
+       return opcion;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
