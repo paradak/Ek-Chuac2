@@ -473,6 +473,8 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                 return true;
 
             case R.id.action_idioma:
+                Idioma();
+                return true;
 
         }
 
@@ -480,7 +482,6 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     }
 
     public void Idioma (){
-
 
     }
 
