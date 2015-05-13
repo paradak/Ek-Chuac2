@@ -30,6 +30,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     private TextView respuesta2;
     private EditText nombre;
     int opcion=0;
+    String idioma=" ";
     String eleccion;
     String eleccion2;
 
@@ -54,7 +55,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                 setEleccion( parent.getItemAtPosition(position).toString());
 
                 switch(getEleccion()) {
-                    case "Euro":setOpcion(1);break;
+                    case "Euro": setOpcion(1);break;
                     case "Dolar Estadounidense":setOpcion(2);break;
                     case "Yen Japones":setOpcion(3);break;
                     case "Libra Esterlina":setOpcion(4);break;
@@ -471,10 +472,20 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                 historial();
                 return true;
 
+            case R.id.action_idioma:
+
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void Idioma (){
+
+
+    }
+
+
+
 
     public void historial(){
 
