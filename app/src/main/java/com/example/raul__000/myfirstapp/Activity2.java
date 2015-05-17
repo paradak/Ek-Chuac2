@@ -8,17 +8,23 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+
+import java.util.List;
 
 
-public class Activity2 extends ActionBarActivity {
+public class Activity2 extends ActionBarActivity{
 
-    final Context context = this;
+    private Context context = this;
+    private Historial x;
+    private int y;
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
@@ -64,7 +70,7 @@ public class Activity2 extends ActionBarActivity {
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Aqui se encuentra el historia de busquedas")
+                .setMessage("Aqui se encuentran los tipos de idiomas que soporta la aplicacion")
                 .setCancelable(true)
                 .setNegativeButton("Ok",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {

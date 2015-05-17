@@ -1,6 +1,7 @@
 package com.example.raul__000.myfirstapp;
 
 import android.app.AlertDialog;
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,11 +14,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Currency;
+import java.util.List;
+import java.util.Random;
 
 
 public class MyActivity extends ActionBarActivity implements View.OnClickListener{
@@ -35,10 +40,17 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     String eleccion2;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+                ////////////
+
+                ///////////
+
+
+
 
         ////////////
         Spinner sp = (Spinner) findViewById(R.id.spinner);
@@ -372,6 +384,9 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                             double operacion = myNum*valor;
                             String resultado = Double.toString(operacion);
                             respuesta2.setText(resultado);
+                            //////////////////////////////////////////////////
+
+                            ///////////////////////////////////////////////7
                         }
                         catch(NumberFormatException nfe)
                         {
@@ -481,14 +496,13 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
         return super.onOptionsItemSelected(item);
     }
 
-    public void Idioma (){
+    public void historial (){
+        Intent i = new Intent(MyActivity.this, ActivityBD.class);
+        startActivity(i);
 
     }
 
-
-
-
-    public void historial(){
+    public void Idioma(){
 
         Intent i = new Intent(MyActivity.this, Activity2.class);
         startActivity(i);
@@ -522,6 +536,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
         alertDialog.show();
 
     }
+
     public void convertidor(){
         Currency c  = Currency.getInstance("EUR");
         c.getSymbol();  //obtiene solo el simbolo
