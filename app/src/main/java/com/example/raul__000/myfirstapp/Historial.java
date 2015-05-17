@@ -20,6 +20,10 @@ public class Historial extends ListActivity {
 
     }
 
+    public void nada(){
+
+    }
+
 
     // Will be used by the ArrayAdapter in the ListView
     @Override
