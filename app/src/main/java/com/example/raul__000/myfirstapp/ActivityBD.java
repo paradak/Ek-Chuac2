@@ -23,7 +23,6 @@ public class ActivityBD extends ListActivity {
         setContentView(R.layout.main);
         datasource = new HistoryBD(this);
         datasource.open();
-
         values = datasource.getAllHistorial();
         // use the SipleCursorAdapter to show the
         // elements in a ListView
@@ -51,7 +50,7 @@ public class ActivityBD extends ListActivity {
                 String[] historials = new String[] {"Cool", "Very nice", "Hate it" };
                 int nextInt = new Random().nextInt(3);
                 // save the new comment to the database
-                historial = datasource.createHistorial(historials[nextInt]);
+                historial = datasource.createHistorial("sfdsd");
                 adapter.add(historial);
                 break;
             case R.id.delete:
@@ -76,5 +75,6 @@ public class ActivityBD extends ListActivity {
         datasource.close();
         super.onPause();
     }
+
 }
 

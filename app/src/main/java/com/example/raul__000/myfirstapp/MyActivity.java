@@ -38,9 +38,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     String idioma=" ";
     String eleccion;
     String eleccion2;
-
-
-
+    private HistoryBD datasource2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -383,7 +381,13 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                             myNum = Double.parseDouble(nombre.getText().toString());
                             double operacion = myNum*valor;
                             String resultado = Double.toString(operacion);
+                            ActivityBD x = new ActivityBD();
+                            String guaradar = "Divisas: "+ getEleccion().toString()+" a "+getEleccion2().toString()+"\nCantidad:"+Double.toString(operacion)+"  Resultado:"+resultado;
                             respuesta2.setText(resultado);
+                            datasource2 = new HistoryBD(context);
+                            datasource2.open();
+                            datasource2.createHistorial(guaradar);
+                            datasource2.close();
                             //////////////////////////////////////////////////
 
                             ///////////////////////////////////////////////7
