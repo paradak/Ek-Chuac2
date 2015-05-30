@@ -53,13 +53,14 @@ public class Activity2 extends ActionBarActivity{
                 showAlert();
 
                 return true;
-
-            case R.id.action_settings:
-                return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 
     void showAlert(){
 

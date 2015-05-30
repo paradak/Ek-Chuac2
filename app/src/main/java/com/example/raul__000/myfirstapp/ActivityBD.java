@@ -2,7 +2,10 @@ package com.example.raul__000.myfirstapp;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,7 +19,6 @@ public class ActivityBD extends ListActivity {
     private HistoryBD datasource;
     private List<Historial> values;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +28,6 @@ public class ActivityBD extends ListActivity {
         values = datasource.getAllHistorial();
         // use the SipleCursorAdapter to show the
         // elements in a ListView
-
-
-
-
-
         ArrayAdapter<Historial> adapter = new ArrayAdapter<Historial>(this,
                 android.R.layout.simple_expandable_list_item_1, values);
         setListAdapter(adapter);
@@ -52,11 +49,15 @@ public class ActivityBD extends ListActivity {
         Historial historial = null;
         switch (view.getId()) {
             case R.id.add:
+
+                /*
                 String[] historials = new String[] {"Cool", "Very nice", "Hate it" };
                 int nextInt = new Random().nextInt(3);
                 // save the new comment to the database
                 historial = datasource.createHistorial("sfdsd");
-                adapter.add(historial);
+                adapter.add(historial);*/
+                Intent act = new Intent(this, MyActivity.class);
+                startActivity(act);
                 break;
             case R.id.delete:
                 if (getListAdapter().getCount() > 0) {

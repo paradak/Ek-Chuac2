@@ -2,25 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
 
     <LinearLayout
         android:id="@+id/group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#C0C0C0">
+
 
         <Button
             android:id="@+id/add"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add New"
+            android:text="Regresar"
             android:onClick="onClick"/>
 
         <Button
             android:id="@+id/delete"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete First"
+            android:text="Borrar primer Registro"
             android:onClick="onClick"/>
 
     </LinearLayout>
@@ -30,7 +34,7 @@
         android:layout_height="40dp"
         android:text="HISTORIAL"
         android:textStyle="bold"
-        android:background="#ff0093ff"
+        android:background="#87CEEB"
         android:gravity="center" />
 
 
@@ -40,7 +44,7 @@
         android:layout_height="40dp"
         android:text="Registros"
         android:textStyle="bold"
-        android:background="#ff0093ff"
+        android:background="#90EE90"
         android:gravity="center" />
 
     <ListView
@@ -49,7 +53,12 @@
         android:layout_height="match_parent"
         android:text="hola"
         android:textStyle="bold"
-        android:background="#ff0093ff"
+        android:background="#98FB98"
         android:gravity="center" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="right" />
 
 </LinearLayout> 
