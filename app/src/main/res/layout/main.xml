@@ -34,10 +34,22 @@
         android:gravity="center" />
 
 
+    <TextView
+        android:id="@+id/historial"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Registros"
+        android:textStyle="bold"
+        android:background="#ff0093ff"
+        android:gravity="center" />
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="hola" />
+        android:text="hola"
+        android:textStyle="bold"
+        android:background="#ff0093ff"
+        android:gravity="center" />
 
 </LinearLayout> 

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.URLUtil;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,6 +21,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Currency;
 import java.util.List;
 import java.util.Random;
@@ -111,7 +117,7 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                             //Euro
                             case 1:
                                     if (getEleccion2().equals("Euro")){
-                                         valor = 1;
+                                         valor = 1;////QUisiera que esto fuera online valor en tiempo real D: !!!!!!!
                                     }
                                     if (getEleccion2().equals("Dolar Estadounidense")){
                                          valor = 1.08905;
@@ -381,9 +387,8 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
                             myNum = Double.parseDouble(nombre.getText().toString());
                             double operacion = myNum*valor;
                             String resultado = Double.toString(operacion);
-                            ActivityBD x = new ActivityBD();
-                            String guaradar = "Divisas: "+ getEleccion().toString()+" a "+getEleccion2().toString()+"\nCantidad:"+Double.toString(operacion)+"  Resultado:"+resultado;
                             respuesta2.setText(resultado);
+                            String guaradar = "Divisas: "+ getEleccion().toString()+" a "+getEleccion2().toString()+"\nCantidad:"+Double.toString(operacion)+"  Resultado:"+resultado;
                             datasource2 = new HistoryBD(context);
                             datasource2.open();
                             datasource2.createHistorial(guaradar);
@@ -454,6 +459,31 @@ public class MyActivity extends ActionBarActivity implements View.OnClickListene
     public String getEleccion2 (){
         return eleccion2;
     }
+
+
+
+
+/*
+    public String conversor_divisas(String eleccion1,String eleccion2, int cantidad) throws MalformedURLException {
+        String cantidad2 = String.valueOf(cantidad);
+        String divisa_origen = eleccion1;
+        String divisa_destino = eleccion2;
+
+        URL url = new URL("http://www.google.com/ig/calculator?hl=en&amp;q="+cantidad2+divisa_origen+"=?"+divisa_destino);
+        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+        try {
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            readStream(in);
+            finally {
+                urlConnection.disconnect();
+            }
+        }
+
+        return round($var,3);
+    }
+*/
+
+
 
 
 

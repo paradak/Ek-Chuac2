@@ -26,6 +26,11 @@ public class ActivityBD extends ListActivity {
         values = datasource.getAllHistorial();
         // use the SipleCursorAdapter to show the
         // elements in a ListView
+
+
+
+
+
         ArrayAdapter<Historial> adapter = new ArrayAdapter<Historial>(this,
                 android.R.layout.simple_expandable_list_item_1, values);
         setListAdapter(adapter);
